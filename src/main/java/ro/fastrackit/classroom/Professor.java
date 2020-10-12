@@ -8,5 +8,16 @@ public class Professor {
     private LocalDate dateOfBirth;
     private LocalDate dateOfHiring;
     private String emailAddress;
-    private Boolean isPhd;
+    public Boolean isPhd;
+
+    void isPhd(){
+
+    }
+}
+
+class PhdProfessor extends Professor{
+    @Override
+    void isPhd() {
+        super.isPhd();
+    }
 }
