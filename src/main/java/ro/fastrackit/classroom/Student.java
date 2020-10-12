@@ -1,4 +1,4 @@
-package ro.fastrackit.classroom;
+package ro.fastrackit.classroom;  //punctul 4
 import java.time.LocalDate;
 
 public class Student {
@@ -66,7 +66,5 @@ public class Student {
     public void setFinishedClass(Boolean finishedClass) {
         this.finishedClass = finishedClass;
     }
-
-    //punctul 4 encapsulate
 
 }
