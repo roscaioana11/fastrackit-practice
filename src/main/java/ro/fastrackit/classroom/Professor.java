@@ -2,7 +2,7 @@ package ro.fastrackit.classroom;
 
 import java.time.LocalDate;
 
-public class Professor {
+public class Professor extends Human{
     private String lastName;
     private String firstName;
     private LocalDate dateOfBirth;
