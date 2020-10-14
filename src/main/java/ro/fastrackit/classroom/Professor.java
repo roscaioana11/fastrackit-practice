@@ -14,10 +14,3 @@ public class Professor extends Human{
 
     }
 }
-
-class PhdProfessor extends Professor{
-    @Override
-    void isPhd() {
-        super.isPhd();
-    }
-}
