@@ -7,8 +7,8 @@ public class Student extends Human{
     private String firstName;
     private LocalDate dateOfBirth;
     private String emailAddress;
-    private Float grade;
-    private Boolean finishedClass;
+    private float grade;
+    private Boolean hasFinishedClass;
 
     //punctul 2
     public Student(String lastName, String firstName, LocalDate dateOfBirth) {
@@ -51,20 +51,20 @@ public class Student extends Human{
         this.emailAddress = emailAddress;
     }
 
-    public Float getGrade() {
+    public float getGrade() {
         return grade;
     }
 
-    public void setGrade(Float grade) {
+    public void setGrade(float grade) {
         this.grade = grade;
     }
 
-    public Boolean getFinishedClass() {
-        return finishedClass;
+    public Boolean getHasFinishedClass() {
+        return hasFinishedClass;
     }
 
-    public void setFinishedClass(Boolean finishedClass) {
-        this.finishedClass = finishedClass;
+    public void setHasFinishedClass(Boolean finishedClass) {
+        this.hasFinishedClass = finishedClass;
     }
 
 }
