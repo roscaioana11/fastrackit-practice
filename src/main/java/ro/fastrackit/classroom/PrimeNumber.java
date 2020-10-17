@@ -11,7 +11,7 @@ public class PrimeNumber {
                 if(num%i == 0)
                     count++;
             }
-            if(count==2){ //if the count is not 2 or more than 2 then is not a prime number
+            if(count==2){ //if the count is not 2 or greater than 2 then is not a prime number
                 System.out.println("Prime Number");
             }
             else{
