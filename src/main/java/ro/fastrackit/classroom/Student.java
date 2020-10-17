@@ -1,7 +1,7 @@
 package ro.fastrackit.classroom;  //punctul 4
 import java.time.LocalDate;
 
-public class Student extends Human{
+public abstract class Student implements Human{
     // punctul 1
     private String lastName;
     private String firstName;
@@ -9,7 +9,12 @@ public class Student extends Human{
     private String emailAddress;
     private float grade;
     private Boolean hasFinishedClass;
+    private StudentType getType;
 
+
+    public StudentType getType(){
+        return getType;
+    }
     //punctul 2
     public Student(String lastName, String firstName, LocalDate dateOfBirth) {
         this.lastName = lastName;
@@ -66,5 +71,7 @@ public class Student extends Human{
     public void setHasFinishedClass(Boolean finishedClass) {
         this.hasFinishedClass = finishedClass;
     }
+    
+
 
 }

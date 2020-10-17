@@ -1,5 +1,14 @@
 package ro.fastrackit.classroom;
 
-public class Human {
+public interface Human {
+
+    void lastName();
+    void firstName();
+    void dateOfBirth();
+    void emailAddress();
+
+    static ScholarType getType() {
+        return getType();
+    }
 
 }

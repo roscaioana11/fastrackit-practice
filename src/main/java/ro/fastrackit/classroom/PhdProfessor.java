@@ -5,4 +5,25 @@ class PhdProfessor extends Professor{
     void isPhd() {
         super.isPhd();
     }
+
+    @Override
+    public void lastName() {
+
+    }
+
+    @Override
+    public void firstName() {
+
+    }
+
+    @Override
+    public void dateOfBirth() {
+
+    }
+
+    @Override
+    public void emailAddress() {
+
+    }
+
 }
