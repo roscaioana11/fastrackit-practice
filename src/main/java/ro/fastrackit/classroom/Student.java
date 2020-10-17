@@ -9,11 +9,11 @@ public abstract class Student implements Human{
     private String emailAddress;
     private float grade;
     private Boolean hasFinishedClass;
-    private StudentType getType;
+    private StudentType studentType;
 
 
     public StudentType getType(){
-        return getType;
+        return studentType;
     }
     //punctul 2
     public Student(String lastName, String firstName, LocalDate dateOfBirth) {

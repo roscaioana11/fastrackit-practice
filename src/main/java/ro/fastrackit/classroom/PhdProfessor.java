@@ -1,5 +1,7 @@
 package ro.fastrackit.classroom;
 
+import java.time.LocalDate;
+
 class PhdProfessor extends Professor{
     @Override
     void isPhd() {
@@ -7,23 +9,22 @@ class PhdProfessor extends Professor{
     }
 
     @Override
-    public void lastName() {
-
+    public String getLastName() {
+        return null;
     }
 
     @Override
-    public void firstName() {
-
+    public String getFirstName() {
+        return null;
     }
 
     @Override
-    public void dateOfBirth() {
-
+    public LocalDate getDateOfBirth() {
+        return null;
     }
 
     @Override
-    public void emailAddress() {
-
+    public String getEmailAddress() {
+        return null;
     }
-
 }

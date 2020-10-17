@@ -1,14 +1,14 @@
 package ro.fastrackit.classroom;
 
+import java.time.LocalDate;
+
 public interface Human {
 
-    void lastName();
-    void firstName();
-    void dateOfBirth();
-    void emailAddress();
+    String getLastName();
+    String getFirstName();
+    LocalDate getDateOfBirth();
+    String getEmailAddress();
 
-    static ScholarType getType() {
-        return getType();
-    }
+    ScholarType getType();
 
 }

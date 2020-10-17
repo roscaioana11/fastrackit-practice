@@ -9,13 +9,13 @@ public abstract class Professor implements Human{
     private LocalDate dateOfHiring;
     private String emailAddress;
     public Boolean isPhd;
-    private Professor getType;
+    private ProfessorType professorType;
 
     void isPhd(){
 
     }
 
-    public Professor getType(){
-        return getType;
+    public ProfessorType getType(){
+        return professorType;
     }
 }
