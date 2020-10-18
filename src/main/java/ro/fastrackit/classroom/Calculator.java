@@ -27,7 +27,7 @@ public class Calculator {
                 break;
             case '/': System.out.println("The answer is: " + div(x,y));
                 break;
-            default: System.out.println("Error! Enter correct operator");
+            default: System.out.println("Error! Not a correct operator");
                 return;
         }
 
