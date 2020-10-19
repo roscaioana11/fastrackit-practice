@@ -1,7 +1,7 @@
 package ro.fastrackit.classroom;  //punctul 4
 import java.time.LocalDate;
 
-public abstract class Student implements Human{
+public class Student implements Human{
     // punctul 1
     private String lastName;
     private String firstName;
