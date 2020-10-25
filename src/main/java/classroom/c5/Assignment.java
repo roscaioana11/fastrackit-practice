@@ -40,11 +40,6 @@ public class Assignment implements Comparator<Assignment> {
         return DifficultyLevel;
     }
 
-    @Override
-    public int compare(Assignment o1,Assignment o2) {
-        return Integer.compare(o1.getCourseNumber(),o2.getCourseNumber());
-    }
-
     //used when working with Sets (have unique elements) and Maps (have unique keys)
     @Override
     public boolean equals(Object o) {
@@ -61,5 +56,14 @@ public class Assignment implements Comparator<Assignment> {
     @Override
     public int hashCode() {
         return Objects.hash(UniqueID,CourseNumber,AssignmentTitle,AssignmentDescription,DifficultyLevel);
+    }
+
+    @Override
+    public int compare(Assignment o1,Assignment o2) {
+        return Integer.compare(o1.getCourseNumber(),o2.getCourseNumber());
+    }
+    @Override
+    public String toString() {
+        return this.getUniqueID().toString();
     }
 }
