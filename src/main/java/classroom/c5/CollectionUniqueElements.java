@@ -12,13 +12,13 @@ public class CollectionUniqueElements {
         Assignment secondNumber = new Assignment(UUID.randomUUID(),2,"course2","homework2","medium");
         Assignment thirdNumber = new Assignment(UUID.randomUUID(),3,"course3","homework3","hard");
 
-        //adaugarea obiectului in lista
-        //assignments.add(firstNumber);
-        //assignments.add(secondNumber);
-        //assignments.add(thirdNumber);
+        /*adaugarea obiectului in lista
+        assignments.add(firstNumber);
+        assignments.add(secondNumber);
+        assignments.add(thirdNumber);
 
-        //sortarea obiectelor folosind un Comparator
-        /*AssignmentComparator comparator1 = new AssignmentComparator();
+        sortarea obiectelor folosind un Comparator
+        AssignmentComparator comparator1 = new AssignmentComparator();
         AssignmentComparator comparator2 = new AssignmentComparator();
         AssignmentComparator comparator3 = new AssignmentComparator();
 
