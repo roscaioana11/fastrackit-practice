@@ -1,4 +1,4 @@
-package fastrackit.classroom.c5;
+package classroom.c5;
 
 import java.util.Comparator;
 import java.util.Objects;
