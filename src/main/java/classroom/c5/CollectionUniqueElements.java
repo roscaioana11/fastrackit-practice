@@ -11,11 +11,17 @@ public class CollectionUniqueElements {
         Assignment firstNumber = new Assignment(UUID.randomUUID(),1,"course1","homework1","easy");
         Assignment secondNumber = new Assignment(UUID.randomUUID(),2,"course2","homework2","medium");
         Assignment thirdNumber = new Assignment(UUID.randomUUID(),3,"course3","homework3","hard");
+        Assignment firstDifferentDifficulty = new Assignment(UUID.randomUUID(),1,"course1","homework1","astonishingly difficult");
+        Assignment firstDifferentTitle = new Assignment(UUID.randomUUID(),1,"course4","homework1","hard");
+
+
 
         //adaugarea obiectului in lista
         assignments.add(firstNumber);
         assignments.add(secondNumber);
         assignments.add(thirdNumber);
+        assignments.add(firstDifferentDifficulty);
+        assignments.add(firstDifferentTitle);
 
         /*sortarea obiectelor folosind un Comparator
         AssignmentComparator comparator1 = new AssignmentComparator();
@@ -34,11 +40,14 @@ public class CollectionUniqueElements {
         assignmentTreeSet.add(firstNumber);
         assignmentTreeSet.add(secondNumber);
         assignmentTreeSet.add(thirdNumber);
+        assignmentTreeSet.add(firstDifferentDifficulty);
+        assignmentTreeSet.add(firstDifferentTitle);
 
         TreeSet<Assignment> assignmentTreeSet1 = new TreeSet<>(Comparator.comparing(Assignment::getCourseNumber).thenComparing(Assignment::getAssignmentTitle));
         assignmentTreeSet1.add(firstNumber);
         assignmentTreeSet1.add(secondNumber);
         assignmentTreeSet1.add(thirdNumber);
+        assignmentTreeSet.add(firstDifferentTitle);
 
         System.out.println("After sorting: " + assignments);
         System.out.println(assignmentTreeSet);

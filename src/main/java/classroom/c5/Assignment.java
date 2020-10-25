@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Assignment implements Comparator<Assignment> {
+public class Assignment {
     UUID UniqueID; //fields
     int CourseNumber;
     String AssignmentTitle;
@@ -59,11 +59,10 @@ public class Assignment implements Comparator<Assignment> {
     }
 
     @Override
-    public int compare(Assignment o1,Assignment o2) {
-        return Integer.compare(o1.getCourseNumber(),o2.getCourseNumber());
-    }
-    @Override
     public String toString() {
-        return this.getUniqueID().toString();
+        return String.format("Assignment %s title: %s, level: %s\n",
+                this.getCourseNumber(),
+                this.getAssignmentTitle(),
+                this.getDifficultyLevel());
     }
 }
