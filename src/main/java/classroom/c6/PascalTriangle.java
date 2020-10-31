@@ -14,7 +14,7 @@ public class PascalTriangle {
 
         System.out.println("Triangle: ");
         for(int i = 0; i<num; i++){
-            //nested for loop for spaces
+            //nested loop for spaces
             for(int k = 1; k<= rows; k++){
                 System.out.print(" ");
             }
