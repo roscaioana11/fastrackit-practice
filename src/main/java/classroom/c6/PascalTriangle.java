@@ -6,7 +6,7 @@ public class PascalTriangle {
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of lines: ");
+        System.out.println("Enter the number of rows: ");
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
         int rows = num;
