@@ -12,7 +12,7 @@ public class PascalTriangle {
         int rows = num;
         int number;
 
-        System.out.println("Triangle: ");
+        System.out.println("Pascal Triangle: ");
         for(int i = 0; i<num; i++){
             //nested loop for spaces
             for(int k = 1; k<= rows; k++){
