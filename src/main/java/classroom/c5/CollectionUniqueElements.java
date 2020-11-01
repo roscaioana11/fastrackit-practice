@@ -1,6 +1,8 @@
 package classroom.c5;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class CollectionUniqueElements {
     public static void main(String[] args) {
@@ -66,5 +68,26 @@ public class CollectionUniqueElements {
 
         System.out.println(assignmentHashMap.get("1" + "easy"));
 
+        //c6 1.1
+        List<UUID> assignmentsList = assignments
+                .stream()
+                .map(singleAssignment -> singleAssignment.getUniqueID())
+                .collect(Collectors.toList());
+        System.out.println("Print UUIDs: " + assignmentsList);
+
+        //c6 1.2
+        List<Assignment> assignmentsFilter = assignments
+                .stream()
+                .filter(thisAssignment -> thisAssignment.getDifficultyLevel().equals("easy") || thisAssignment.getDifficultyLevel().equals("medium"))
+                .collect(Collectors.toList());
+        System.out.println("Print the filtered difficulty level: " + assignmentsFilter);
+
+        //c6 1.3
+
+
+        //c6 1.4
+        HashMap<UUID, Assignment> streamHashMap = assignments
+                .stream()
+                .collect(Collectors.toMap(Function.identity()));
     }
 }
