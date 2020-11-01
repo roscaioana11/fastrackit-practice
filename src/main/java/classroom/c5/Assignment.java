@@ -4,39 +4,39 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Assignment {
-    UUID UniqueID; //fields
-    int CourseNumber;
-    String AssignmentTitle;
-    String AssignmentDescription;
-    String DifficultyLevel;
+    UUID uniqueID; //fields
+    int courseNumber;
+    String assignmentTitle;
+    String assignmentDescription;
+    String difficultyLevel;
 
 
     public Assignment(UUID uniqueID, int courseNumber, String assignmentTitle, String assignmentDescription, String difficultyLevel) { //constructor
-        this.UniqueID = uniqueID;
-        this.CourseNumber = courseNumber;
-        this.AssignmentTitle = assignmentTitle;
-        this.AssignmentDescription = assignmentDescription;
-        this.DifficultyLevel = difficultyLevel;
+        this.uniqueID = uniqueID;
+        this.courseNumber = courseNumber;
+        this.assignmentTitle = assignmentTitle;
+        this.assignmentDescription = assignmentDescription;
+        this.difficultyLevel = difficultyLevel;
     }
 
     public UUID getUniqueID() {
-        return UniqueID;
+        return uniqueID;
     }
 
     public int getCourseNumber() {
-        return CourseNumber;
+        return courseNumber;
     }
 
     public String getAssignmentTitle() {
-        return AssignmentTitle;
+        return assignmentTitle;
     }
 
     public String getAssignmentDescription() {
-        return AssignmentDescription;
+        return assignmentDescription;
     }
 
     public String getDifficultyLevel() {
-        return DifficultyLevel;
+        return difficultyLevel;
     }
 
     //used when working with Sets (have unique elements) and Maps (have unique keys)
@@ -45,16 +45,16 @@ public class Assignment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Assignment that = (Assignment) o;
-        return CourseNumber == that.CourseNumber &&
-                UniqueID.equals(that.UniqueID) &&
-                AssignmentTitle.equals(that.AssignmentTitle) &&
-                AssignmentDescription.equals(that.AssignmentDescription) &&
-                DifficultyLevel.equals(that.DifficultyLevel);
+        return courseNumber == that.courseNumber &&
+                uniqueID.equals(that.uniqueID) &&
+                assignmentTitle.equals(that.assignmentTitle) &&
+                assignmentDescription.equals(that.assignmentDescription) &&
+                difficultyLevel.equals(that.difficultyLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(UniqueID,CourseNumber,AssignmentTitle,AssignmentDescription,DifficultyLevel);
+        return Objects.hash(uniqueID,courseNumber,assignmentTitle,assignmentDescription,difficultyLevel);
     }
 
     @Override

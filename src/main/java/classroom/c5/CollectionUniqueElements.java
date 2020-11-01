@@ -8,7 +8,7 @@ public class CollectionUniqueElements {
     public static void main(String[] args) {
 
         // 2. collection with elements
-        List<Assignment> assignments = new ArrayList<>();
+        Set<Assignment> assignments = new HashSet<>();
         //instantierea obiectului
         Assignment firstNumber = new Assignment(UUID.randomUUID(),1,"course1","homework1","easy");
         Assignment secondNumber = new Assignment(UUID.randomUUID(),2,"course2","homework2","medium");
@@ -69,25 +69,31 @@ public class CollectionUniqueElements {
         System.out.println(assignmentHashMap.get("1" + "easy"));
 
         //c6 1.1
+        System.out.println("Print UUIDs: ");
         List<UUID> assignmentsList = assignments
                 .stream()
                 .map(singleAssignment -> singleAssignment.getUniqueID())
+                .peek(System.out::println)
                 .collect(Collectors.toList());
-        System.out.println("Print UUIDs: " + assignmentsList);
 
         //c6 1.2
+        System.out.println("Print the filtered difficulty level:");
         List<Assignment> assignmentsFilter = assignments
                 .stream()
                 .filter(thisAssignment -> thisAssignment.getDifficultyLevel().equals("easy") || thisAssignment.getDifficultyLevel().equals("medium"))
+                .peek(System.out::println)
                 .collect(Collectors.toList());
-        System.out.println("Print the filtered difficulty level: " + assignmentsFilter);
-
-        //c6 1.3
 
 
         //c6 1.4
-        HashMap<UUID, Assignment> streamHashMap = assignments
+        System.out.println("Hash map:");
+        Map<UUID, Assignment> streamHashMap = assignments
                 .stream()
-                .collect(Collectors.toMap(Function.identity()));
+                .collect(Collectors.toMap(Assignment::getUniqueID, Function.identity()));
+        for (var e : streamHashMap.entrySet()) {
+            System.out.println(String.format("Key: %s, value: %s", e.getKey(), e.getValue()));
+        }
+
+
     }
 }
