@@ -3,10 +3,10 @@ import java.time.LocalDate;
 
 public class Student implements Human{
     // punctul 1
-    private String lastName;
-    private String firstName;
-    private LocalDate dateOfBirth;
-    private String emailAddress;
+    public String lastName;
+    public String firstName;
+    public LocalDate dateOfBirth;
+    public String emailAddress;
     private float grade;
     private Boolean hasFinishedClass;
     private StudentType studentType;
@@ -16,7 +16,7 @@ public class Student implements Human{
         return studentType;
     }
     //punctul 2
-    public Student(String lastName, String firstName, LocalDate dateOfBirth) {
+    public Student(String firstStudent) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;
