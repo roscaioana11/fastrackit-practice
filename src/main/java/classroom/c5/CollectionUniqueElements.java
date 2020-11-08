@@ -60,6 +60,7 @@ public class CollectionUniqueElements {
 
 
 
+
         // 5
         HashMap<String, Assignment> assignmentHashMap = new HashMap<String, Assignment>();
         assignmentHashMap.put("1" + "easy", firstNumber);
