@@ -1,5 +1,6 @@
 package ro.fastrackit.classroom;  //punctul 4
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Student implements Human{
     // punctul 1
@@ -16,7 +17,7 @@ public class Student implements Human{
         return studentType;
     }
     //punctul 2
-    public Student(String firstStudent) {
+    public Student(String lastName, String firstName, LocalDate dateOfBirth) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.dateOfBirth = dateOfBirth;
@@ -71,7 +72,31 @@ public class Student implements Human{
     public void setHasFinishedClass(Boolean finishedClass) {
         this.hasFinishedClass = finishedClass;
     }
-    
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Float.compare(student.grade,grade) == 0 &&
+                lastName.equals(student.lastName) &&
+                firstName.equals(student.firstName) &&
+                dateOfBirth.equals(student.dateOfBirth) &&
+                Objects.equals(emailAddress,student.emailAddress) &&
+                Objects.equals(hasFinishedClass,student.hasFinishedClass) &&
+                studentType == student.studentType;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(lastName,firstName,dateOfBirth,emailAddress,grade,hasFinishedClass,studentType);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("LastName %s FirstName: %s, DateOfBirth: %s\n",
+                this.getLastName(),
+                this.getFirstName(),
+                this.getDateOfBirth());
+    }
 }

@@ -13,7 +13,7 @@ public class Box<T extends Human> {
         return genericObj;
     }
 
-    public void setT(T t) {
+    public void setT(T genericObj) {
         this.genericObj = genericObj;
     }
 }
