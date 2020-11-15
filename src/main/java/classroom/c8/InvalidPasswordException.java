@@ -72,7 +72,7 @@ public class InvalidPasswordException extends Exception{
             if (true) {
                 int count = 0;
 
-                // check digits from 0 to 9
+                // check digits
                 for (int i = 0; i <= 9; i++) {
 
                     // to convert int to string
