@@ -10,6 +10,8 @@ package classroom.c8;
  */
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class InvalidPasswordException extends Exception{
@@ -35,6 +37,13 @@ public class InvalidPasswordException extends Exception{
         }
 
     }
+    static List<PasswordBox> createPasswordList(){
+        ArrayList<PasswordBox> passwordList = new ArrayList<>();
+        PasswordBox tryPassword = new PasswordBox("Password length should be atleast 12 characters","Password should contain at least 3 digit","Password should contain at least 1 uppercase","Password should contain at least 1 lowecase");
+        passwordList.add(tryPassword);
+        System.out.println("You need: " + passwordList);
+        return passwordList;
+    }
 
     public InvalidPasswordException(int conditionIllegal)
     {
@@ -49,31 +58,21 @@ public class InvalidPasswordException extends Exception{
 
             // Password length should be atleat 12 characters
             case 1:
-                return (" Password length should be atleast 12 characters");
-
-            // Password should not contain any space
-            case 2:
-                return (" Password should not"
-                        + " contain any space");
 
             // Password should contain// at least 3 digits
-            case 3:
-                return (" Password should contain"
-                        + " at least one digit(0-9)");
+            case 2:
 
             // Password should contain at least one uppercase letter (A-Z)
-            case 4:
-                return (" Password should contain at"
-                        + " least one uppercase letter(A-Z)");
+            case 3:
 
             // Password should contain at least one lowecase letter (a-z)
-            case 5:
-                return (" Password should contain at"
-                        + " least one lowercase letter(a-z)");
+            case 4:
         }
 
-        return ("");
+        return ("" + createPasswordList());
     }
+
+
 
 
         // whether a password is valid or not
@@ -86,10 +85,6 @@ public class InvalidPasswordException extends Exception{
                 throw new InvalidPasswordException(1);
             }
 
-            // to check space
-            if (password.contains(" ")) {
-                throw new InvalidPasswordException(2);
-            }
             if (true) {
                 int count = 0;
 
@@ -100,11 +95,11 @@ public class InvalidPasswordException extends Exception{
                     String str1 = Integer.toString(i);
 
                     if (password.contains(str1)) {
-                        count = 1;
+                        count = 3;
                     }
                 }
                 if (count == 0) {
-                    throw new InvalidPasswordException(3);
+                    throw new InvalidPasswordException(2);
                 }
             }
 
@@ -123,7 +118,7 @@ public class InvalidPasswordException extends Exception{
                     }
                 }
                 if (count == 0) {
-                    throw new InvalidPasswordException(4);
+                    throw new InvalidPasswordException(3);
                 }
             }
 
@@ -142,7 +137,7 @@ public class InvalidPasswordException extends Exception{
                     }
                 }
                 if (count == 0) {
-                    throw new InvalidPasswordException(5);
+                    throw new InvalidPasswordException(4);
                 }
             }
 
