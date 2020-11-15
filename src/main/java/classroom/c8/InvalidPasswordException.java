@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InvalidPasswordException extends Exception{
-    int passwordConditionIllegal;
+    List<String> passwordConditionIllegal;
 
     public static void main(String[] args) {
 
@@ -31,58 +31,42 @@ public class InvalidPasswordException extends Exception{
                 System.out.println("Valid Password");
             }catch (InvalidPasswordException caughtInvalidPasswordException){
                 System.err.println(caughtInvalidPasswordException.getMessage());
-                System.out.println(caughtInvalidPasswordException.printMessage());
+                System.err.println(caughtInvalidPasswordException.printMessage());
             }
 
         }
 
     }
-    static List<PasswordBox> createPasswordList(){
-        ArrayList<PasswordBox> passwordList = new ArrayList<>();
-        PasswordBox tryPassword = new PasswordBox("Password length should be atleast 12 characters","Password should contain at least 3 digit","Password should contain at least 1 uppercase","Password should contain at least 1 lowecase");
-        passwordList.add(tryPassword);
-        System.out.println("You need: " + passwordList);
-        return passwordList;
-    }
 
-    public InvalidPasswordException(int conditionIllegal)
+    public InvalidPasswordException(List<String> passwordErrorList)
     {
         super("Invalid Password");
-        passwordConditionIllegal = conditionIllegal;
+        passwordConditionIllegal = passwordErrorList;
+        String finalErrorString = "";
+        for (int i = 0; i < passwordErrorList.size(); i++) {
+            finalErrorString = finalErrorString + passwordErrorList.get(i);
+        }
+
     }
     public String printMessage()
     {
-        // Call constructor of parent Exception
-        // according to the illegal condition
-        switch (passwordConditionIllegal) {
-
-            // Password length should be atleat 12 characters
-            case 1:
-
-            // Password should contain// at least 3 digits
-            case 2:
-
-            // Password should contain at least one uppercase letter (A-Z)
-            case 3:
-
-            // Password should contain at least one lowecase letter (a-z)
-            case 4:
+        String errorList = "";
+        for(int i = 0; i < passwordConditionIllegal.size(); i++){
+            errorList = errorList + passwordConditionIllegal.get(i);
         }
-
-        return ("" + createPasswordList());
+        return(errorList);
     }
-
-
-
 
         // whether a password is valid or not
         public static void validatePassCheck(String password)
                 throws InvalidPasswordException
         {
+            List<String> passwordErrorList = new ArrayList<String>(); //create error list
 
             // for checking if password length
             if (!((password.length() >11))) {
-                throw new InvalidPasswordException(1);
+                String passwordLenght = "Password length should be at least 12 characters. ";
+                passwordErrorList.add(passwordLenght); //adding the error in the list
             }
 
             if (true) {
@@ -99,7 +83,8 @@ public class InvalidPasswordException extends Exception{
                     }
                 }
                 if (count == 0) {
-                    throw new InvalidPasswordException(2);
+                    String digits = "Password should contain at least 3 digit. ";
+                    passwordErrorList.add(digits);
                 }
             }
 
@@ -118,7 +103,8 @@ public class InvalidPasswordException extends Exception{
                     }
                 }
                 if (count == 0) {
-                    throw new InvalidPasswordException(3);
+                    String upperCase = "Password should contain at least 1 uppercase. ";
+                    passwordErrorList.add(upperCase);
                 }
             }
 
@@ -137,10 +123,14 @@ public class InvalidPasswordException extends Exception{
                     }
                 }
                 if (count == 0) {
-                    throw new InvalidPasswordException(4);
+                    String lowerCase = "Password should contain at least 1 lowercase. ";
+                    passwordErrorList.add(lowerCase);
                 }
-            }
 
+            }
+            if(!passwordErrorList.isEmpty() && passwordErrorList != null){ //verify if the list is empty or not
+            throw new InvalidPasswordException(passwordErrorList); //throw the error list
+                }
             // The password is valid
         }
 

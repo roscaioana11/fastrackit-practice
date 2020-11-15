@@ -66,7 +66,7 @@ public class PasswordBox {
 
     @Override
     public String toString() {
-        return String.format("charctersLenght %s digits: %s, upperCase:, lowerCase: %s\n",
+        return String.format("CharctersLenght: %s Digits: %s, UpperCase:, LowerCase: %s\n",
                 this.getCharactersLenght(),
                 this.getDigits(),
                 this.getUpperCase(),
