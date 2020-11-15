@@ -25,9 +25,8 @@ public class InvalidPasswordException extends Exception{
             String pass = scann.nextLine();
 
             try{
-                System.out.print("Password: " + pass);
                 validatePassCheck(pass);
-                System.out.println(" Valid Password");
+                System.out.println("Valid Password");
             }catch (InvalidPasswordException caughtInvalidPasswordException){
                 System.err.println(caughtInvalidPasswordException.getMessage());
                 System.out.println(caughtInvalidPasswordException.printMessage());
