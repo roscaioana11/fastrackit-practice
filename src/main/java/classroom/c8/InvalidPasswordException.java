@@ -61,12 +61,12 @@ public class InvalidPasswordException extends Exception{
         public static void validatePassCheck(String password)
                 throws InvalidPasswordException
         {
-            List<String> passwordErrorList = new ArrayList<String>(); //create error list
+            List<String> passwordErrorList = new ArrayList<>(); //create error list
 
             // for checking if password length
             if (!((password.length() >11))) {
-                String passwordLenght = "Password length should be at least 12 characters. ";
-                passwordErrorList.add(passwordLenght); //adding the error in the list
+                String passwordLength = "Password length should be at least 12 characters. ";
+                passwordErrorList.add(passwordLength); //adding the error in the list
             }
 
                 int countDigits = 0;
