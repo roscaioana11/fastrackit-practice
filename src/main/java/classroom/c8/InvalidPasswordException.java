@@ -69,8 +69,7 @@ public class InvalidPasswordException extends Exception{
                 passwordErrorList.add(passwordLenght); //adding the error in the list
             }
 
-            if (true) {
-                int count = 0;
+                int countDigits = 0;
 
                 // check digits
                 for (int i = 0; i <= 9; i++) {
@@ -79,17 +78,16 @@ public class InvalidPasswordException extends Exception{
                     String str1 = Integer.toString(i);
 
                     if (password.contains(str1)) {
-                        count = 3;
+                        countDigits = 3;
                     }
                 }
-                if (count == 0) {
+                if (countDigits == 0) {
                     String digits = "Password should contain at least 3 digit. ";
                     passwordErrorList.add(digits);
                 }
-            }
 
-            if (true) {
-                int count = 0;
+
+                int countUpperCase = 0;
 
                 // checking capital letters
                 for (int i = 65; i <= 90; i++) {
@@ -99,17 +97,16 @@ public class InvalidPasswordException extends Exception{
 
                     String str1 = Character.toString(c);
                     if (password.contains(str1)) {
-                        count = 1;
+                        countUpperCase = 1;
                     }
                 }
-                if (count == 0) {
+                if (countUpperCase == 0) {
                     String upperCase = "Password should contain at least 1 uppercase. ";
                     passwordErrorList.add(upperCase);
                 }
-            }
 
-            if (true) {
-                int count = 0;
+
+                int countLowerCase = 0;
 
                 // checking small letters
                 for (int i = 90; i <= 122; i++) {
@@ -119,15 +116,15 @@ public class InvalidPasswordException extends Exception{
                     String str1 = Character.toString(c);
 
                     if (password.contains(str1)) {
-                        count = 1;
+                        countLowerCase = 1;
                     }
                 }
-                if (count == 0) {
+                if (countLowerCase == 0) {
                     String lowerCase = "Password should contain at least 1 lowercase. ";
                     passwordErrorList.add(lowerCase);
                 }
 
-            }
+
             if(!passwordErrorList.isEmpty() && passwordErrorList != null){ //verify if the list is empty or not
             throw new InvalidPasswordException(passwordErrorList); //throw the error list
                 }
