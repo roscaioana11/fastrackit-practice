@@ -70,7 +70,6 @@ public class InvalidPasswordException extends Exception{
             }
 
                 int countDigits = 0;
-
                 // check digits
                 for (int i = 0; i <= 9; i++) {
 
@@ -88,7 +87,6 @@ public class InvalidPasswordException extends Exception{
 
 
                 int countUpperCase = 0;
-
                 // checking capital letters
                 for (int i = 65; i <= 90; i++) {
 
@@ -107,7 +105,6 @@ public class InvalidPasswordException extends Exception{
 
 
                 int countLowerCase = 0;
-
                 // checking small letters
                 for (int i = 90; i <= 122; i++) {
 

@@ -24,7 +24,7 @@ public class ValidatePassword {
 
     public static String passCheck (String password) {
 
-        String result = "Valid Password";			// Sets the initial result as valid
+        String result = "Valid Password ";			// Sets the initial result as valid
         int length = 0;						// Stores the number characters in the password
         int numCount = 0;					// Variable used to store numbers in the password
         int upperCount = 0;					// Variable used to store capital letters in the password
@@ -36,7 +36,7 @@ public class ValidatePassword {
                     (password.charAt(x) >= 97 && password.charAt(x) <= 122)) {
                 //Keep the Password
             } else {
-                result = "Password Contains Invalid Character!";		//Checks that password contains only letters and numbers
+                result = "Password Contains Invalid Character! ";		//Checks that password contains only letters and numbers
             }
 
             if ((password.charAt(x) > 47 && password.charAt(x) < 58)) {			// Counts the number of numbers
@@ -56,19 +56,19 @@ public class ValidatePassword {
         }
 
         if (numCount < 3){									// Checks that password contains at least 3 numbers
-            result += "Need at least 3 numbers";
+            result += "Need at least 3 numbers. ";
         }
 
         if (upperCount < 1) {									// Checks that the password contains at least 1 uppercase letter
-            result += "Not Enough Capital Letters in the Password!";
+            result += "Not Enough Capital Letters in the Password! ";
         }
 
         if(lowCount < 1){                                   //Checks that password contains at least 1 lowercase letter
-            result += "Not enough Lower Letters in the Password";
+            result += "Not enough Lower Letters in the Password. ";
         }
 
         if (length < 12){									// Checks that password is long enough
-            result += "Password is Too Short!";
+            result += "Password is Too Short! ";
         }
 
         return (result);
