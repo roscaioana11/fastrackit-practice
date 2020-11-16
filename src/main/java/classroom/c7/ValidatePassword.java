@@ -2,7 +2,7 @@ package classroom.c7;
 
 /* At least 12characters
    Uppercase and lowercase
-   Atleast 3 digits
+   At least 3 digits
    Only letters and digits
  */
 
@@ -18,11 +18,11 @@ public class ValidatePassword {
         System.out.print("Password: ");
         pass = scann.next();
 
-        System.out.println(PassCheck(pass));				// Calls the PassCheck Method on the password entered by the user and prints result to screen
+        System.out.println(passCheck(pass));				// Calls the PassCheck Method on the password entered by the user and prints result to screen
 
     }
 
-    public static String PassCheck (String Password) {
+    public static String passCheck (String password) {
 
         String result = "Valid Password";			// Sets the initial result as valid
         int length = 0;						// Stores the number characters in the password
@@ -31,23 +31,23 @@ public class ValidatePassword {
         int lowCount = 0;                   // Variable used to store lower letters in the password
 
 
-        for (int x =0; x < Password.length(); x++) {
-            if ((Password.charAt(x) >= 47 && Password.charAt(x) <= 58) || (Password.charAt(x) >= 64 && Password.charAt(x) <= 91) ||
-                    (Password.charAt(x) >= 97 && Password.charAt(x) <= 122)) {
+        for (int x =0; x < password.length(); x++) {
+            if ((password.charAt(x) >= 47 && password.charAt(x) <= 58) || (password.charAt(x) >= 64 && password.charAt(x) <= 91) ||
+                    (password.charAt(x) >= 97 && password.charAt(x) <= 122)) {
                 //Keep the Password
             } else {
                 result = "Password Contains Invalid Character!";		//Checks that password contains only letters and numbers
             }
 
-            if ((Password.charAt(x) > 47 && Password.charAt(x) < 58)) {			// Counts the number of numbers
+            if ((password.charAt(x) > 47 && password.charAt(x) < 58)) {			// Counts the number of numbers
                 numCount ++;
             }
 
-            if ((Password.charAt(x) > 64 && Password.charAt(x) < 91)) {			// Counts the number of capital letters
+            if ((password.charAt(x) > 64 && password.charAt(x) < 91)) {			// Counts the number of capital letters
                 upperCount ++;
             }
 
-            if ((Password.charAt(x) > 97 && Password.charAt(x) < 122)){
+            if ((password.charAt(x) > 97 && password.charAt(x) < 122)){
                 lowCount ++;
             }
 
@@ -55,20 +55,20 @@ public class ValidatePassword {
 
         }
 
-        if (numCount < 3){									// Checks that password contains atleast 3 numbers
-            result = "Need atleast 3 numbers";
+        if (numCount < 3){									// Checks that password contains at least 3 numbers
+            result += "Need at least 3 numbers";
         }
 
-        if (upperCount < 1) {									// Checks that the password contains atleast 1 uppercase letter
-            result = "Not Enough Capital Letters in the Password!";
+        if (upperCount < 1) {									// Checks that the password contains at least 1 uppercase letter
+            result += "Not Enough Capital Letters in the Password!";
         }
 
-        if(lowCount < 1){                                   //Checks that password contains atleast 1 lowercase letter
-            result = "Not enough Lower Letters in the Password";
+        if(lowCount < 1){                                   //Checks that password contains at least 1 lowercase letter
+            result += "Not enough Lower Letters in the Password";
         }
 
         if (length < 12){									// Checks that password is long enough
-            result = "Password is Too Short!";
+            result += "Password is Too Short!";
         }
 
         return (result);
