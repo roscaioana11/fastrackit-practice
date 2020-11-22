@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MyCalculator {
     public static void main(String[] args) {
 
-        MyCalculator my_calculator = new MyCalculator();
+        MyCalculator myCalculator = new MyCalculator();
         Scanner scann = new Scanner(System.in);
         System.out.println("Enter first number: ");
 
@@ -15,7 +15,7 @@ public class MyCalculator {
                 int p = scann.nextInt();
 
                 try {
-                    System.out.println(my_calculator.power(n, p));
+                    System.out.println(myCalculator.power(n, p));
                 } catch (Exception e) {
                     System.out.println(e);
                 }
