@@ -8,7 +8,8 @@ public class AnagramSolution {
 
         //checking the length
         if(a.length() != b.length()){
-            return false;
+            //return false;
+            throw new RuntimeException();
         }
 
         char string1ToArray[] = a.toCharArray();
@@ -21,7 +22,10 @@ public class AnagramSolution {
         //iterate through the arrays
         for(int i = 0; i < a.length(); i++){
             if(string1ToArray[i] != string2ToArray[i]){
-                return false; //false if are not equal
+                //return false; //false if are not equal
+                throw new RuntimeException("Not Anagrams");
+            }else{
+                System.out.println(a = b);
             }
         }
         return true; //true if are equal
