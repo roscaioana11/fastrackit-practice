@@ -29,8 +29,6 @@ public class InvalidAnagramException extends Exception {
             if(string1ToArray[i] != string2ToArray[i]){
                 //return false; //false if are not equal
                 throw new InvalidAnagramException("Not Anagrams");
-            }else{
-                System.out.println(a = b);
             }
         }
         return true; //true if are equal
