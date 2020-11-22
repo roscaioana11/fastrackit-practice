@@ -3,13 +3,18 @@ package classroom.c8;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class AnagramSolution {
-    static boolean isAnagram(String a,String b) {
+public class InvalidAnagramException extends Exception {
+    public InvalidAnagramException(String message){
+        super(message);
+    }
+
+    static boolean isAnagram(String a,String b) throws InvalidAnagramException {
 
         //checking the length
         if(a.length() != b.length()){
             //return false;
-            throw new RuntimeException();
+            String message = "";
+            throw new InvalidAnagramException(message);
         }
 
         char string1ToArray[] = a.toCharArray();
@@ -23,7 +28,7 @@ public class AnagramSolution {
         for(int i = 0; i < a.length(); i++){
             if(string1ToArray[i] != string2ToArray[i]){
                 //return false; //false if are not equal
-                throw new RuntimeException("Not Anagrams");
+                throw new InvalidAnagramException("Not Anagrams");
             }else{
                 System.out.println(a = b);
             }
@@ -31,7 +36,7 @@ public class AnagramSolution {
         return true; //true if are equal
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidAnagramException {
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter first String: ");
