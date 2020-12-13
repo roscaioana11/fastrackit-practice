@@ -1,4 +1,4 @@
-package classroom.c7;
+package ro.fastrackit.classroom.c7;
 
 import ro.fastrackit.classroom.Human;
 import ro.fastrackit.classroom.Student;

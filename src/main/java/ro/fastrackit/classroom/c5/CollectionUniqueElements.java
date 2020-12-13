@@ -1,4 +1,4 @@
-package classroom.c5;
+package ro.fastrackit.classroom.c5;
 
 import java.util.*;
 import java.util.function.Function;

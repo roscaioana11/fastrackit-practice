@@ -1,4 +1,4 @@
-package classroom.c6;
+package ro.fastrackit.classroom.c6;
 
 public class OverloadingMethod {
 

@@ -1,4 +1,4 @@
-package classroom.c8;
+package ro.fastrackit.classroom.c8;
 
 /* At least 12characters
    Uppercase and lowercase

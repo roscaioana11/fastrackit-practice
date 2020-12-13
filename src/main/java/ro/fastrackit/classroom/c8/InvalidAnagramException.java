@@ -1,4 +1,4 @@
-package classroom.c8;
+package ro.fastrackit.classroom.c8;
 
 import java.util.Arrays;
 import java.util.Scanner;

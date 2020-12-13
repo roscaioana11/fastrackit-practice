@@ -1,4 +1,4 @@
-package classroom.c10;
+package ro.fastrackit.classroom.c10;
 
 import java.util.ArrayList;
 import java.util.List;

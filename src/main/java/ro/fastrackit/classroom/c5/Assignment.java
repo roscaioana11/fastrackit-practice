@@ -1,4 +1,4 @@
-package classroom.c5;
+package ro.fastrackit.classroom.c5;
 
 import java.util.Objects;
 import java.util.UUID;
