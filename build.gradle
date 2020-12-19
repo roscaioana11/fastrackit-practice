@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'ro.fastrackit'
+group = 'ro.fasttrackit'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '15'
 
@@ -17,6 +17,7 @@ dependencies {
     compile "org.apache.poi:poi:3.17"
     compile "org.apache.poi:poi-ooxml:3.17"
 
+    // TODO some other class testCompile group: 'junit', name: 'junit', version: '4.13.1'
 }
 
 test {
