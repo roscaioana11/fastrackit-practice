@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '4.1.2' // same thing as: compile 'org.apache.commons:commons-lang3:3.11'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11' // same thing as: compile 'org.apache.commons:commons-lang3:3.11'
     // we can have keywords like: compile, testCompile, implementation, testImplementation, runtime, jar(for direct .jar reference) etc.
 
     compile "org.apache.poi:poi:3.17"

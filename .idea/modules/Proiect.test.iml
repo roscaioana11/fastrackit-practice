@@ -7,6 +7,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Proiect.main" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.11" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.poi:poi-ooxml:3.17" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.poi:poi:3.17" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.poi:poi-ooxml-schemas:3.17" level="project" />
@@ -15,7 +16,6 @@
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-collections4:4.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
     <orderEntry type="library" name="Gradle: stax:stax-api:1.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:4.1.2" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Proiect.main" />
 </module>

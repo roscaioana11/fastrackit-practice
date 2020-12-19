@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class CustomerPurchase {
 
-    public int id;
-    public String purchasedProduct;
-    public String name;
-    public String category;
+    int id;
+    String purchasedProduct;
+    String name;
+    String category;
 
     public CustomerPurchase(int id,String purchasedProduct,String name,String category) {
         this.id = id;
@@ -20,32 +20,16 @@ public class CustomerPurchase {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getPurchasedProduct() {
         return purchasedProduct;
-    }
-
-    public void setPurchasedProduct(String purchasedProduct) {
-        this.purchasedProduct = purchasedProduct;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getCategory() {
         return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     @Override
@@ -62,5 +46,15 @@ public class CustomerPurchase {
     @Override
     public int hashCode() {
         return Objects.hash(id,purchasedProduct,name,category);
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerPurchase{" +
+                "id=" + id +
+                ", purchasedProduct='" + purchasedProduct + '\'' +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                '}';
     }
 }

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Proiect.iml" filepath="$PROJECT_DIR$/.idea/Proiect.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Proiect.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Proiect.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Proiect.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Proiect.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/training-spring/Proiect.training-spring.iml" filepath="$PROJECT_DIR$/.idea/modules/training-spring/Proiect.training-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/training-spring/Proiect.training-spring.main.iml" filepath="$PROJECT_DIR$/.idea/modules/training-spring/Proiect.training-spring.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/training-spring/Proiect.training-spring.test.iml" filepath="$PROJECT_DIR$/.idea/modules/training-spring/Proiect.training-spring.test.iml" />
     </modules>
   </component>
 </project>
