@@ -1,8 +1,13 @@
 package org.fasttrackit.trainingspring.controller;
 
 import org.fasttrackit.trainingspring.model.Student;
+import org.fasttrackit.trainingspring.model.entity.StudentEntity;
 import org.fasttrackit.trainingspring.service.StudentService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 //Presentation Layer
@@ -15,31 +20,43 @@ public class StudentController {
         this.service = injectedService;  //cauta toate obiectele de tip studentservice pe care el le-a creat si le injecteaza aici
     }
 
-    //Read operations
-    @GetMapping("/api/student/{mesaj}")
-    public String getFirstMessage(@PathVariable("mesaj") String mesajText,
-                                  @RequestParam(name = "mesaj2", required = false) String mesajText2) {  // ?mesaj2=asd
-        return "<h1> Salut!</h1> \n  Am primit mesajul: " + mesajText + "\n " + mesajText2;
+    @GetMapping("/api/student/{id}")
+    public Student getStudentById(@PathVariable(name = "id") Long stundentId) {
+        return service.getStudentById(stundentId);
     }
 
-    @GetMapping("/basic")
-    public  String hellp(){
-        return  "asd";
+    @GetMapping("/api/student")
+    public ResponseEntity<List<Student>> getStudentsBy(@RequestParam(name = "lastname", required = false) String lastname,
+                                  @RequestParam(name = "firstname", required = false) String firstname) {
+
+        return ResponseEntity.ok(this.service.findStudentsBy(lastname, firstname));
+    }
+
+    @GetMapping("/api/student")
+    public List<Student> getAllStudents(){
+        return service.findAllStudents();
     }
 
     //Create operations
-    @PostMapping(/*name = */"/api/student")
-    public Student createNewStudent(@RequestBody Student studentRequest){
-    /*
-    (@RequestParam(name = "lastname", required = false) String lastname,
-    @RequestParam(name = "firstname", required = false) String firstname)
-        Student newStudent = new Student();
-        newStudent.setFirstName(firstname);
-        newStudent.setLastName(lastname);
-        return newStudent;
-        */
+    @PostMapping("/api/student")
+    public ResponseEntity<Student> createNewStudent(@RequestBody Student studentRequest){
 
-        return /*studentRequest*/ service.createNewStudent(studentRequest);
+        return ResponseEntity.ok(service.createNewStudent(studentRequest));
+    }
+
+    @PutMapping("/api/student")
+    public ResponseEntity<Student> updateStudent(@RequestBody Student updateRequest){
+        if(updateRequest.getId()==null || updateRequest.getId() <= 0){
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(updateRequest);
+        }
+        return ResponseEntity.ok(service.updateStudent(updateRequest));
+    }
+
+    @DeleteMapping("/api/student/{id}")
+    public void deleteStudent(@PathVariable("id") Long idToDelete){
+        this.service.deleteStudentById(idToDelete);
     }
 
     //Update operations => PUT
