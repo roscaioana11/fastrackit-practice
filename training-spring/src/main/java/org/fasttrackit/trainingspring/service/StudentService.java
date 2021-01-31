@@ -7,6 +7,8 @@ import org.fasttrackit.trainingspring.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,8 +23,11 @@ public class StudentService {
 
     private final StudentRepository repository; //mappam/injectam repository in clasa service
 
-    public StudentService(StudentRepository injectedRepository){
+    private final EntityManager entityManager;
+
+    public StudentService(StudentRepository injectedRepository,EntityManager entityManager){
         this.repository = injectedRepository;
+        this.entityManager = entityManager;
     }
 
     public Student mapEntityToStudentResponse(StudentEntity entity){  //pt refactor code, folosim metoda asta sa scurtam codul de mai jos
@@ -142,6 +147,26 @@ public class StudentService {
 
     public void deleteStudentById(Long id){
         this.repository.deleteById(id);
+    }
+
+    @Transactional
+    public void renameAllStudents(List<Long> studentIds, String newFirstname) {
+        List<StudentEntity> allById = this.repository.findAllByIdIn(studentIds);
+
+        allById.forEach(student ->
+        {
+            double randomNumber = Math.random() * 10;
+            if(randomNumber>5) {
+                throw new RuntimeException("n-am chef");
+            }
+
+            student.setFirstName(newFirstname);
+            this.repository.save(student);
+        });
+    }
+
+    private EntityManager em(){
+        return entityManager;
     }
 
 }

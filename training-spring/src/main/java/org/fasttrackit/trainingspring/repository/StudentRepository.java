@@ -20,4 +20,6 @@ public interface StudentRepository extends JpaRepository<StudentEntity, Long> { 
     Optional<StudentEntity> findStudentByFirstName(@Param("firstName") String firstname);
 
     List<StudentEntity> findStudentEntitiesByFirstnameEqualsOrLastnameEquals(String firstname,String lastname);
+
+    List<StudentEntity> findAllByIdIn(List<Long> ids);
 }

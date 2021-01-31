@@ -1,5 +1,6 @@
 package org.fasttrackit.trainingspring.controller;
 
+import org.fasttrackit.trainingspring.controller.model.RenameStudentsDto;
 import org.fasttrackit.trainingspring.model.Student;
 import org.fasttrackit.trainingspring.model.entity.StudentEntity;
 import org.fasttrackit.trainingspring.service.StudentService;
@@ -57,6 +58,11 @@ public class StudentController {
     @DeleteMapping("/api/student/{id}")
     public void deleteStudent(@PathVariable("id") Long idToDelete){
         this.service.deleteStudentById(idToDelete);
+    }
+
+    @PatchMapping("/api/student")
+    public void renameAll(@RequestBody RenameStudentsDto dto) {
+        this.service.renameAllStudents(dto.getStudentIds(), dto.getNewFirstname());
     }
 
     //Update operations => PUT
