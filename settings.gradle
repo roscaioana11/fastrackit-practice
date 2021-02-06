@@ -1,3 +1,4 @@
 rootProject.name = 'Proiect'
 
 include 'training-spring'
+include 'message-service'
